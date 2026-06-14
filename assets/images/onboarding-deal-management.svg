@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#121c2a"/>
+      <stop offset="100%" stop-color="#003527"/>
+    </linearGradient>
+    <linearGradient id="goldbar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e9c349"/>
+      <stop offset="100%" stop-color="#735c00"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg3)"/>
+  <!-- Tablet device outline -->
+  <g transform="translate(200,200)">
+    <rect x="-70" y="-100" width="140" height="180" rx="12" fill="#f8f9ff" opacity="0.95"/>
+    <rect x="-60" y="-85" width="120" height="150" rx="4" fill="#ffffff"/>
+    <!-- Timeline dots -->
+    <circle cx="-30" cy="-50" r="6" fill="#003527"/>
+    <line x1="-30" y1="-44" x2="-30" y2="-20" stroke="#003527" stroke-width="2"/>
+    <circle cx="-30" cy="-20" r="6" fill="#003527"/>
+    <line x1="-30" y1="-14" x2="-30" y2="10" stroke="#bfc9c3" stroke-width="2"/>
+    <circle cx="-30" cy="10" r="6" fill="#bfc9c3"/>
+    <line x1="-30" y1="16" x2="-30" y2="40" stroke="#bfc9c3" stroke-width="2"/>
+    <circle cx="-30" cy="40" r="6" fill="#bfc9c3"/>
+    <!-- Labels -->
+    <text x="0" y="-45" fill="#121c2a" font-size="10" font-family="IBM Plex Sans" font-weight="600">الاستكشاف</text>
+    <text x="0" y="-15" fill="#121c2a" font-size="10" font-family="IBM Plex Sans" font-weight="600">الاتفاقية</text>
+    <text x="0" y="15" fill="#bfc9c3" font-size="10" font-family="IBM Plex Sans">المعاينة</text>
+  </g>
+</svg>

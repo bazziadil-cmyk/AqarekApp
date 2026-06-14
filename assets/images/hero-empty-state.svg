@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#003527"/>
+      <stop offset="100%" stop-color="#0b513d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="#e6eeff" opacity="0.3"/>
+  <g transform="translate(400,200)" fill="none" stroke="#003527" stroke-opacity="0.15" stroke-width="2">
+    <polygon points="0,-80 -90,0 90,0"/>
+    <rect x="-70" y="0" width="140" height="100" rx="3"/>
+    <rect x="-30" y="25" width="60" height="75" rx="2"/>
+    <rect x="-75" y="10" width="15" height="90"/>
+    <rect x="60" y="10" width="15" height="90"/>
+  </g>
+  <rect x="0" y="340" width="800" height="60" fill="#003527" opacity="0.08"/>
+</svg>
