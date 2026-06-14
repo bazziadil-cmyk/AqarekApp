@@ -171,9 +171,9 @@
 <!-- TopAppBar (Shared Component Logic) -->
 <header class="w-full top-0 sticky bg-surface z-40 shadow-[0px_10px_30px_rgba(6,78,59,0.05)] flex justify-between items-center px-container-margin py-base h-20">
 <div class="flex items-center gap-4">
-<h1 class="font-headline-lg text-headline-lg font-semibold text-primary">منصة الإدارة</h1>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg font-semibold text-primary">منصة الإدارة</h1>
 <div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
-<div class="flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant">
+<div class="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant">
 <span class="material-symbols-outlined text-on-surface-variant ml-2">search</span>
 <input class="bg-transparent border-none focus:ring-0 text-sm font-body-sm w-48 text-right" placeholder="بحث عن صفقات، عملاء..." type="text">
 </div>
@@ -186,8 +186,8 @@
 <div class="relative cursor-pointer group">
 <span class="material-symbols-outlined text-on-surface-variant text-2xl group-hover:text-primary transition-colors ml-2">tune</span>
 </div>
-<button class="md:hidden flex items-center justify-center p-2 rounded-lg bg-surface-container-high">
-<span class="material-symbols-outlined text-primary ml-2">menu</span>
+<button onclick="toggleDrawer()" class="md:hidden flex items-center justify-center p-2 rounded-lg bg-surface-container-high" aria-label="فتح القائمة">
+<span class="material-symbols-outlined text-primary">menu</span>
 </button>
 </div>
 </header>
@@ -475,10 +475,43 @@
 </div>
 </main>
 <!-- FAB Component -->
-<div class="fixed bottom-8 left-8 z-50">
+<div class="fixed bottom-24 md:bottom-8 left-8 z-50">
 <button class="bg-secondary text-white w-14 h-14 rounded-full shadow-[0px_10px_20px_rgba(115,92,0,0.3)] flex items-center justify-center hover:scale-110 active:scale-95 transition-transform">
 <span class="material-symbols-outlined text-3xl">add</span>
 </button>
+</div>
+<!-- Mobile Drawer Overlay -->
+<div id="mobile-drawer" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-label="القائمة الجانبية">
+<div class="absolute inset-0 bg-black/40 transition-opacity" onclick="toggleDrawer()"></div>
+<aside class="absolute top-0 right-0 h-full w-80 bg-surface-container-low border-l border-outline-variant flex flex-col py-stack-lg gap-base overflow-y-auto shadow-2xl transition-transform">
+<div class="flex justify-between items-center px-container-margin mb-2">
+<span class="font-title-md text-title-md text-primary">القائمة</span>
+<button onclick="toggleDrawer()" class="p-2 rounded-lg hover:bg-surface-container-high transition-colors" aria-label="إغلاق القائمة">
+<span class="material-symbols-outlined text-on-surface-variant">close</span>
+</button>
+</div>
+<div class="px-container-margin mb-stack-lg flex items-center gap-4 text-right">
+<div class="w-12 h-12 rounded-full border-2 border-secondary overflow-hidden shrink-0">
+<img alt="Premium Broker Profile" class="w-full h-full object-cover" src="../assets/images/avatars/avatar-male-01.jpg">
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-primary">مستشار عقاري متميز</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">الوكالة العقارية الفاخرة</p>
+<span class="inline-block bg-secondary-container text-on-secondary-fixed-variant px-2 py-0.5 rounded-full text-[10px] font-bold mt-1">عضو بلاتيني</span>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="bg-secondary-container text-on-secondary-container rounded-lg mx-2 my-1 px-4 py-3 flex flex-row justify-between items-center transition-all" href="../_1/"><span class="font-title-md text-title-md">لوحة التحكم</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span></a>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 my-1 px-4 py-3 flex flex-row justify-between items-center transition-all" href="../_1/"><span class="font-title-md text-title-md">إدارة العقارات</span><span class="material-symbols-outlined">domain</span></a>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 my-1 px-4 py-3 flex flex-row justify-between items-center transition-all" href="../_1/"><span class="font-title-md text-title-md">طلبات العملاء</span><span class="material-symbols-outlined">handshake</span></a>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 my-1 px-4 py-3 flex flex-row justify-between items-center transition-all" href="../_1/"><span class="font-title-md text-title-md">التقارير المالية</span><span class="material-symbols-outlined">analytics</span></a>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 my-1 px-4 py-3 flex flex-row justify-between items-center transition-all" href="../_1/"><span class="font-title-md text-title-md">إعدادات النظام</span><span class="material-symbols-outlined">settings</span></a>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-lg mx-2 my-1 px-4 py-3 flex flex-row justify-between items-center transition-all" href="../_1/"><span class="font-title-md text-title-md">الدعم الفني</span><span class="material-symbols-outlined">support_agent</span></a>
+</nav>
+<div class="mt-auto px-6">
+<a href="../" class="block font-label-caps text-label-caps text-on-surface-variant text-center hover:text-primary transition-colors opacity-50 hover:opacity-100">العودة إلى المعاينة</a>
+</div>
+</aside>
 </div>
 <!-- Mobile Bottom Navigation (Shared Component Logic) -->
 <footer class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-lowest shadow-[0px_-2px_10px_rgba(0,0,0,0.05)] flex flex-row-reverse justify-around items-center h-16 px-4">
@@ -504,17 +537,30 @@
 </a>
 </footer>
 <script>
-        // Simple Interaction logic for dashboard
+        // Mobile drawer toggle
+        function toggleDrawer() {
+            const drawer = document.getElementById('mobile-drawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        // Close drawer on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const drawer = document.getElementById('mobile-drawer');
+                if (!drawer.classList.contains('hidden')) {
+                    drawer.classList.add('hidden');
+                }
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             const tableRows = document.querySelectorAll('tbody tr');
             tableRows.forEach(row => {
                 row.addEventListener('click', () => {
                     console.log('Row clicked');
-                    // Add subtle highlight or redirection logic here
                 });
             });
 
-            // Hover effect for charts (Visual only)
             const chartDots = document.querySelectorAll('circle[fill="#735c00"]');
             chartDots.forEach(dot => {
                 dot.style.cursor = 'pointer';
